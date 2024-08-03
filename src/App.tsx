@@ -1,4 +1,4 @@
-import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, ChakraProvider, ExpandedIndex, Flex, Heading, Link, Spacer } from '@chakra-ui/react'
+import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, ChakraProvider, Flex, Heading, Link, Spacer } from '@chakra-ui/react'
 import githubLogo from './assets/github.svg';
 import linkedinLogo from './assets/linkedin.svg';
 import emailLogo from './assets/email.svg';
