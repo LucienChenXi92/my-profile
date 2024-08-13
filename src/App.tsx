@@ -84,8 +84,8 @@ function App() {
               最熟悉的编程语言：Java, Javascript, SQL, Typescript, Golang <br/>
               最熟练的前端框架：React, Angular <br/>
               最熟练的后端框架：spring-boot 全家桶 <br/>
-              最熟悉的数据库：MySQL，Oracle，Postgre <br/>
-              最熟悉的云厂商：AWS，Alicloud <br/>
+              最熟悉的数据库：MySQL, Oracle, Postgre <br/>
+              最熟悉的云厂商：AWS, Alicloud <br/>
               最喜欢的开发模式及框架：Agile + scrum <br/><br/>
               <b>管理</b><br/>
               5年以上敏捷开发团队管理经验，团队成员包括前后端Dev，PM，QA，DBA等。团队规模最大时达到14人。主要负责开发任务的评估，分解以及制定排期。 利用敏捷开发管理工具，确保开发任务有序开展并高质量地按时完成。 <br/><br/>
