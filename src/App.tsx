@@ -9,8 +9,8 @@ function App() {
   const [expandedIndex, setExpanedIndex] = useState<number>(0);
 
   const bgImgs: string[] = [
+    'https://images.pexels.com/photos/2346594/pexels-photo-2346594.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 
     'https://images.pexels.com/photos/1420003/pexels-photo-1420003.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 
-    'https://images.pexels.com/photos/2176729/pexels-photo-2176729.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     'https://images.pexels.com/photos/2971098/pexels-photo-2971098.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     'https://images.pexels.com/photos/754355/pexels-photo-754355.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
   ]
@@ -31,6 +31,12 @@ function App() {
             <Heading size='md'>Lucien's Home</Heading>
           </Box>
           <Spacer />
+          <Box p='2'>
+            <Link href="https://github.com/LucienChenXi92" target='_blank'><Heading size='sm'>Github</Heading></Link>
+          </Box>
+          <Box p='2'>
+            <Link href="https://tobetogether.xyz" target='_blank'><Heading size='sm'>Blog</Heading></Link>
+            </Box>
         </Flex>
         <Accordion mt={8} maxW='600px' defaultIndex={expandedIndex} onChange={handleAccordionChange}>
           <AccordionItem>
