@@ -31,6 +31,7 @@ function App() {
       <Box 
       bgPosition='center center'
       bgSize='cover'
+      minHeight='100vh'
       transition='background-image 1s ease-in-out'
       bgImage={`linear-gradient(to right top, rgba(0, 15, 15, 0.95) 0 40%, rgba(0, 0, 0, 0.1)), url(${bgImgs[expandedIndex]})`} w='100%' minH='100vh' p={4} color='white'>
         <Flex minWidth='max-content' alignItems='center' gap='2'>
@@ -117,7 +118,7 @@ function App() {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <Flex minW='326px' alignItems='center' gap='2'>
+                  <Flex minW='326px' mt='20px' alignItems='center' gap='2'>
                     <Box bgColor='white' borderRadius='8px' overflow='hidden'>
                       <Link href="https://github.com/LucienChenXi92" target='_blank'><img width='30px' src={githubLogo} alt="github-logo" /></Link>
                     </Box>
@@ -133,12 +134,17 @@ function App() {
           </Accordion>
           <Spacer />
           {sideImgs[expandedIndex] && <Show breakpoint='(min-width: 1000px)'>
-            <Box maxW='500px' mx='10%' overflow='hidden' borderRadius='16px'>
+            <Box maxWidth='360px' mx='10%' overflow='hidden' borderRadius='16px'>
               <img src={sideImgs[expandedIndex]}></img>
             </Box>
           </Show>}
         </Box>
       </Box>
+      <Flex minWidth='max-content' justifyContent='center' alignItems='center' gap='2'>
+        <Box p='2'>
+          <Heading size='xs'>Copyright © Lucien's Home {new Date().getFullYear()} · <Link href='https://beian.miit.gov.cn'>粤ICP备19161005号-1</Link></Heading>
+        </Box>
+      </Flex>
     </ChakraProvider>
   )
 }
