@@ -141,8 +141,9 @@ function App() {
         </Box>
       </Box>
       <Flex minWidth='max-content' justifyContent='center' alignItems='center' gap='2'>
-        <Box p='2'>
-          <Heading size='xs'>Copyright © Lucien's Home {new Date().getFullYear()} · <Link href='https://beian.miit.gov.cn'>粤ICP备19161005号-1</Link></Heading>
+        <Box p='2' justifyContent='center' >
+          <Heading size='xs' textAlign='center'>Copyright © {new Date().getFullYear()} · Lucien's Home</Heading>
+          <Heading size='xs' textAlign='center'><Link href='https://beian.miit.gov.cn'>粤ICP备19161005号-1</Link></Heading>
         </Box>
       </Flex>
     </ChakraProvider>
