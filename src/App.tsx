@@ -94,7 +94,7 @@ function App() {
                   <b>通用</b><br/>
                   自然语言：中文（普通话），英语 <br/><br/>
                   <b>开发</b><br/>
-                  开发理念：技术服务于业务，不追求极致的技术，而最求极致的收益 <br/><br/>
+                  开发理念：技术服务于业务，不追求极致的技术，而最求极致的收益 <br/>
                   最熟悉的编程语言：Java, Javascript, SQL, Typescript, Golang <br/>
                   最熟练的前端框架：React, Angular <br/>
                   最熟练的后端框架：spring-boot 全家桶 <br/>
@@ -102,8 +102,7 @@ function App() {
                   最熟悉的云厂商：AWS, Alicloud <br/>
                   最喜欢的开发模式及框架：Agile + scrum <br/><br/>
                   <b>管理</b><br/>
-                  5年以上敏捷开发团队管理经验，团队成员包括前后端Dev，PM，QA，DBA等。团队规模最大时达到14人。主要负责开发任务的评估，分解以及制定排期。 利用敏捷开发管理工具，确保开发任务有序开展并高质量地按时完成。 <br/><br/>
-                  此外，还具有2年项目管理经验，2019年获得 PMP 项目认证。 <br/>
+                  5年以上敏捷开发团队管理经验，团队成员包括前后端Dev，PM，QA，DBA等。团队规模最大时达到14人。主要负责开发任务的评估，分解以及制定排期。 利用敏捷开发管理工具，确保开发任务有序开展并高质量地按时完成。 此外，2年项目管理经验，2019年获得 PMP 项目认证。 <br/>
 
                 </AccordionPanel>
               </AccordionItem>
@@ -118,17 +117,17 @@ function App() {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                <Flex minWidth='500px' alignItems='center' gap='2'>
-                  <Box bgColor='white' borderRadius='8px' overflow='hidden'>
-                    <Link href="https://github.com/LucienChenXi92" target='_blank'><img width='30px' src={githubLogo} alt="github-logo" /></Link>
-                  </Box>
-                  <Box bgColor='#758CA3' borderRadius='8px' overflow='hidden'>
-                    <Link href="https://www.linkedin.com/in/lucien-chen-219ab6175/" target='_blank'><img width='30px' src={linkedinLogo} alt="linkedin-logo" /></Link>
-                  </Box>
-                  <Box bgColor='#758CA3' borderRadius='8px' overflow='hidden'>
-                    <Link href="mailto:474504303@qq.com?subject=Hello Lucien!" target='_blank'><img width='30px' src={emailLogo} alt="linkedin-logo" /></Link>
-                  </Box>
-                </Flex>
+                  <Flex minW='326px' alignItems='center' gap='2'>
+                    <Box bgColor='white' borderRadius='8px' overflow='hidden'>
+                      <Link href="https://github.com/LucienChenXi92" target='_blank'><img width='30px' src={githubLogo} alt="github-logo" /></Link>
+                    </Box>
+                    <Box bgColor='#758CA3' borderRadius='8px' overflow='hidden'>
+                      <Link href="https://www.linkedin.com/in/lucien-chen-219ab6175/" target='_blank'><img width='30px' src={linkedinLogo} alt="linkedin-logo" /></Link>
+                    </Box>
+                    <Box bgColor='#758CA3' borderRadius='8px' overflow='hidden'>
+                      <Link href="mailto:474504303@qq.com?subject=Hello Lucien!" target='_blank'><img width='30px' src={emailLogo} alt="linkedin-logo" /></Link>
+                    </Box>
+                  </Flex>
                 </AccordionPanel>
               </AccordionItem>
           </Accordion>
