@@ -58,7 +58,7 @@ function App() {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  Lucien，一个不断折腾的 IT 宅男，喜欢体验新鲜事物，追求探寻世界运行的真相。<br/><br/>
+                  Lucien Chen(陈熹)，一个不断折腾的 IT 男，现居中国广东深圳。喜欢体验新鲜事物，探寻世界运行的真相。<br/><br/>
                   爱好：读书，编程，音乐，游戏，美食……还有小猫咪。<br/>
                   喜欢的作家：余华，蔡崇达 <br/>
                   喜欢的话题：技术，认知，搞钱 <br/>
