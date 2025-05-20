@@ -3,9 +3,10 @@ import githubLogo from './assets/github.svg';
 import linkedinLogo from './assets/linkedin.svg';
 import emailLogo from './assets/email.svg';
 import { useState } from 'react';
+import { useLanguage } from './i18n/LanguageContext';
 
 function App() {
-
+  const { t, toggleLanguage } = useLanguage();
   const [expandedIndex, setExpanedIndex] = useState<number>(0);
 
   const bgImgs: string[] = [
@@ -36,14 +37,17 @@ function App() {
       bgImage={`linear-gradient(to right top, rgba(0, 15, 15, 0.95) 0 40%, rgba(0, 0, 0, 0.1)), url(${bgImgs[expandedIndex]})`} w='100%' minH='100vh' p={4} color='white'>
         <Flex minWidth='max-content' alignItems='center' gap='2'>
           <Box p='2'>
-            <Heading size='md'>Lucien's Home</Heading>
+            <Heading size='md'>{t.header.title}</Heading>
           </Box>
           <Spacer />
           <Box p='2'>
-            <Link href="https://github.com/LucienChenXi92" target='_blank'><Heading size='sm'>Github</Heading></Link>
+            <Link href="https://github.com/LucienChenXi92" target='_blank'><Heading size='sm'>{t.header.github}</Heading></Link>
           </Box>
           <Box p='2'>
-            <Link href="https://tobetogether.xyz" target='_blank'><Heading size='sm'>Blog</Heading></Link>
+            <Link href="#" onClick={(e) => { e.preventDefault(); toggleLanguage(); }}><Heading size='sm'>{t.header.language}</Heading></Link>
+          </Box>
+          <Box p='2'>
+            <Link href="https://tobetogether.xyz" target='_blank'><Heading size='sm'>{t.header.blog}</Heading></Link>
           </Box>
         </Flex>
         <Box display='flex'>
@@ -52,16 +56,19 @@ function App() {
                 <h2>
                   <AccordionButton>
                     <Box as='span' flex='1' textAlign='left'>
-                      个人介绍
+                      {t.sections.about.title}
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  Lucien Chen(陈熹)，一个不断折腾的 IT 男，现居中国广东深圳。喜欢体验新鲜事物，探寻世界运行的真相。<br/><br/>
-                  爱好：读书，编程，音乐，游戏，美食……还有小猫咪。<br/>
-                  喜欢的作家：余华，蔡崇达 <br/>
-                  喜欢的话题：技术，认知，搞钱 <br/>
+                  {t.sections.about.content.map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                  ))}
+                  <br/>
+                  <b>{t.sections.about.hobbies}：</b>{t.sections.about.hobbiesContent}<br/>
+                  <b>{t.sections.about.favoriteAuthors}：</b>{t.sections.about.favoriteAuthorsContent}<br/>
+                  <b>{t.sections.about.favoriteTopics}：</b>{t.sections.about.favoriteTopicsContent}<br/>
                 </AccordionPanel>
               </AccordionItem>
 
@@ -69,16 +76,16 @@ function App() {
                 <h2>
                   <AccordionButton>
                     <Box as='span' flex='1' textAlign='left'>
-                      作品集
+                      {t.sections.portfolio.title}
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <b>开源博客框架：TOBE-BLOG</b><br/>
-                  TOBE-BLOG 是我和几位小伙伴一起开发并运营的学习博客网站，其理念为 “Have fun together, grow up together”，意为“同欢乐，共成长”，主张长期主义的个人积累和成长（personal development）。无论是专业技能，语言学习，读书感悟，还是沟通技巧，团队管理方面，在这里都是鼓励分享的话题。未来计划会不断攒出优秀，有趣的共创项目，以创带练，以练带学。<br/><br/>
+                  <b>{t.sections.portfolio.projectTitle}</b><br/>
+                  {t.sections.portfolio.projectDescription}<br/><br/>
 
-                  主页：<a href='https://tobetogether.xyz/'>https://tobetogether.xyz</a>
+                  {t.sections.portfolio.homepage}：<a href='https://tobetogether.xyz/'>https://tobetogether.xyz</a>
                 </AccordionPanel>
               </AccordionItem>
 
@@ -86,24 +93,24 @@ function App() {
                 <h2>
                   <AccordionButton>
                     <Box as='span' flex='1' textAlign='left'>
-                    技能树
+                    {t.sections.skills.title}
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <b>通用</b><br/>
-                  自然语言：中文（普通话），英语 <br/><br/>
-                  <b>开发</b><br/>
-                  开发理念：技术服务于业务，不追求极致的技术，而最求极致的收益 <br/>
-                  最熟悉的编程语言：Java, Javascript, SQL, Typescript, Golang <br/>
-                  最熟练的前端框架：React, Angular <br/>
-                  最熟练的后端框架：spring-boot 全家桶 <br/>
-                  最熟悉的数据库：MySQL, Oracle, Postgre <br/>
-                  最熟悉的云厂商：AWS, Alicloud <br/>
-                  最喜欢的开发模式及框架：Agile + scrum <br/><br/>
-                  <b>管理</b><br/>
-                  5年以上敏捷开发团队管理经验，团队成员包括前后端Dev，PM，QA，DBA等。团队规模最大时达到14人。主要负责开发任务的评估，分解以及制定排期。 利用敏捷开发管理工具，确保开发任务有序开展并高质量地按时完成。 此外，2年项目管理经验，2019年获得 PMP 项目认证。 <br/>
+                  <b>{t.sections.skills.general}</b><br/>
+                  {t.sections.skills.languages}<br/><br/>
+                  <b>{t.sections.skills.development.title}</b><br/>
+                  {t.sections.skills.development.philosophy}<br/>
+                  {t.sections.skills.development.programmingLanguages}<br/>
+                  {t.sections.skills.development.frontendFrameworks}<br/>
+                  {t.sections.skills.development.backendFrameworks}<br/>
+                  {t.sections.skills.development.databases}<br/>
+                  {t.sections.skills.development.cloudProviders}<br/>
+                  {t.sections.skills.development.developmentMode}<br/><br/>
+                  <b>{t.sections.skills.management.title}</b><br/>
+                  {t.sections.skills.management.content}<br/>
 
                 </AccordionPanel>
               </AccordionItem>
@@ -112,7 +119,7 @@ function App() {
                 <h2>
                   <AccordionButton>
                     <Box as='span' flex='1' textAlign='left'>
-                      联系方式
+                      {t.sections.contact.title}
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
@@ -142,7 +149,7 @@ function App() {
       </Box>
       <Flex minWidth='max-content' justifyContent='center' alignItems='center' gap='2'>
         <Box p='2' justifyContent='center' >
-          <Heading size='xs' textAlign='center'>Copyright © {new Date().getFullYear()} · Lucien's Home</Heading>
+          <Heading size='xs' textAlign='center'>{t.footer.copyright.replace('{year}', new Date().getFullYear().toString())}</Heading>
           <Heading size='xs' textAlign='center'><Link href='https://beian.miit.gov.cn'>粤ICP备19161005号-1</Link></Heading>
         </Box>
       </Flex>
